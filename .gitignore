@@ -1,0 +1,4 @@
+codebase/
+deploy/
+node_modules/
+*.log
