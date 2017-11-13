@@ -1,10 +1,5 @@
 import {JetView} from "webix-jet";
 
-import search	from "views/modules/product_search";
-import editor	from "views/modules/editor";
-import upload	from "views/modules/product_upload";
-import meta 	from "views/modules/product_meta";
-
 
 export default class ProductEditView extends JetView{
 	config(){

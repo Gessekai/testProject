@@ -2,7 +2,6 @@ import {JetView} from "webix-jet";
 
 import menu		from "views/menus/sidebar";
 import "views/webix/icon";
-import "views/webix/menutree";
 
 
 
