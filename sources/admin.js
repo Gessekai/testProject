@@ -16,7 +16,7 @@ webix.ready(function(){
 
 	app.attachEvent("app:error:resolve", function(name, err){
 		window.console.error(err);
-		webix.delay(() => this.show("/app/dashboard"));
+		webix.delay(() => this.show("/app/contacts"));
 	});
 	app.render();
 });

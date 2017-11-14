@@ -11,6 +11,9 @@ export default class AppView extends JetView {
 	}
 	init(){
 	}
+	urlChange(view, url){
+		console.log(url)
+	}
 }
 
 //Top toolbar

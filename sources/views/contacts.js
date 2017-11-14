@@ -16,7 +16,11 @@ export default class ClientsView extends JetView{
 			webix.$$("editClients").show();
 		});
 	}
+	urlChange(view, url){
+		console.log(url)
+	}
 };
+
 
 
 
