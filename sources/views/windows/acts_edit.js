@@ -30,14 +30,21 @@ const fields = [
 		{view:"datepicker", type:"time", name:"time", label:"Time"}
 	]},
 	{view:"checkbox", label:"Completed", name:"complete"},
-	{cols:[
-		{},
-		{ view: "button", type: "form", label: "Save", click:function(){
-			this.getFormView().save();
-			this.getTopParentView().hide();
-		}},
-		{ view: "button", label: "Cancel"}	
-	]}
+	{
+		visibleBatch:"saveBtn",
+		cols:[
+			{},
+			{ view: "button", type: "form", label: "Add", click:function(){
+				this.getFormView().save();
+				this.getTopParentView().hide();
+			}, batch:"addBtn"},
+			{ view: "button", type: "form", label: "Save", click:function(){
+				this.getFormView().save();
+				this.getTopParentView().hide();
+			}, batch:"saveBtn"},
+			{ view: "button", label: "Cancel"}	
+		]
+	}
 ];
 
 

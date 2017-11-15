@@ -16,6 +16,7 @@ export default class ActsView extends JetView{
 		view.queryView({view:"datatable"}).on_click["fa-pencil-square-o"] = function(e, id){
 			collection.setCursor(id);
 			webix.$$("editActivities").show();
+			webix.$$("editActivities").queryView({view:"button"}).getParentView().showBatch("saveBtn");
 		};
 	}
 };
@@ -26,7 +27,9 @@ const layout = {
 			view:"toolbar", elements:[
 				{},
 				{view:"button", autowidth:true, type:"iconButton", icon:"plus", label:"Add new activity", click:function(){
-					webix.message("Add window")
+					collection.setCursor(null);
+					webix.$$("editActivities").show();
+					webix.$$("editActivities").queryView({view:"button"}).getParentView().showBatch("addBtn");
 				}}
 			]
 		},
