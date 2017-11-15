@@ -1,32 +1,25 @@
 import {JetView} from "webix-jet";
-import clients		from "views/modules/data_clients";
-import clientsWin	from "views/windows/clients_edit_window";
+import clientsList	from "views/modules/cont_data";
+import clientsTemp	from "views/modules/cont_template"
 
 
 export default class ClientsView extends JetView{
 	config(){
 		return layout;
 	}
-	init(view){		
-	    this.editWin = this.ui(clientsWin);		
-	}
 	ready(view, url){		
-		webix.$$("editClients").queryView({view:"form"}).bind(webix.$$("clientsData"));
-		this.on(webix.$$("clientsData"), "onAfterSelect", function(){
-			webix.$$("editClients").show();
+		let list = view.queryView({view:"list"});
+		this.on(list, "onAfterSelect", (id)=>{
+			view.queryView({view:"template"}).setValues(list.getItem(id));
 		});
-	}
-	urlChange(view, url){
-		console.log(url)
+		list.select(list.getFirstId())
 	}
 };
 
-
-
-
 const layout = {
 	type: "space",
-	rows:[
-		clients
+	cols:[
+		clientsList,
+		clientsTemp
 	]
 };
